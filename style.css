@@ -1981,3 +1981,43 @@
       padding: 20px;
     }
   }
+
+  /* ============================================
+   MOBILE NAV CALL BUTTON FIX
+   ============================================ */
+
+/* Force the call button in the mobile menu to be visible */
+.mobile-nav .btn-primary {
+  display: block !important;
+  width: 100%;
+  text-align: center;
+  padding: 14px 20px;
+  background-color: #2563eb;        /* Bright blue — change to your brand color if needed */
+  color: #ffffff !important;        /* Force white text */
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+}
+
+/* Hover / focus state */
+.mobile-nav .btn-primary:hover,
+.mobile-nav .btn-primary:active,
+.mobile-nav .btn-primary:focus {
+  background-color: #1d4ed8;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* If your mobile menu background is also dark, make sure the 
+   regular links above it are light enough too */
+.mobile-nav a {
+  color: #f3f4f6;                   /* Light gray/white for menu links */
+}
+
+.mobile-nav a:hover,
+.mobile-nav a:focus {
+  color: #ffffff;
+}
