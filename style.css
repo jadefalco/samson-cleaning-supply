@@ -335,13 +335,11 @@
   }
   
   .hero h1 {
-    font-size: 2.75rem;
-    font-weight: 800;
-    line-height: 1.05;
-    color: var(--navy);
-    margin-bottom: 28px;
-    letter-spacing: -0.03em;
-  }
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);   /* smaller max size */
+  font-weight: 700;                           /* drop from 900 to 700 */
+  line-height: 1.15;                          /* breathe a little */
+  max-width: 600px;                           /* prevent awkward wrapping */
+}
   
   .hero-lead {
     font-size: 1.125rem;
