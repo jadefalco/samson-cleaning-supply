@@ -248,20 +248,44 @@
   
   .menu-toggle {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
+    position: relative;
   }
   
-  .menu-toggle span {
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .hamburger-icon span {
     display: block;
     width: 24px;
     height: 2px;
     background-color: var(--navy);
     transition: var(--transition);
+  }
+  
+  .mop-icon {
+    display: none;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+  
+  .menu-toggle[aria-expanded="true"] .hamburger-icon {
+    display: none;
+  }
+  
+  .menu-toggle[aria-expanded="true"] .mop-icon {
+    display: block;
   }
   
   /* Mobile Nav */
@@ -1744,12 +1768,14 @@
   .hero-modern {
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 4rem;
+    gap: 40px;
     align-items: center;
   }
   
   .hero-content {
-    max-width: 540px;
+    flex: 1.2;
+    min-width: 55%;
+    
   }
   
   .hero-eyebrow {
@@ -1806,6 +1832,7 @@
   }
   
   .hero-image-wrap {
+    flex: 0.8;
     position: relative;
   }
   
@@ -1981,41 +2008,12 @@
   }
 
   /* ============================================
-   MOBILE NAV CALL BUTTON FIX
+   MOBILE NAV CALL BUTTON
    ============================================ */
 
-/* Force the call button in the mobile menu to be visible */
 .mobile-nav .btn-primary {
-  display: block !important;
+  display: flex !important;
+  justify-content: center;
   width: 100%;
-  text-align: center;
-  padding: 14px 20px;
-  background-color: #2563eb;        /* Bright blue — change to your brand color if needed */
-  color: #ffffff !important;        /* Force white text */
-  font-weight: 700;
-  font-size: 16px;
-  border-radius: 8px;
-  margin-top: 12px;
-  text-decoration: none;
-  border: 2px solid transparent;
-}
-
-/* Hover / focus state */
-.mobile-nav .btn-primary:hover,
-.mobile-nav .btn-primary:active,
-.mobile-nav .btn-primary:focus {
-  background-color: #1d4ed8;
-  color: #ffffff !important;
-  border-color: rgba(255,255,255,0.3);
-}
-
-/* If your mobile menu background is also dark, make sure the 
-   regular links above it are light enough too */
-.mobile-nav a {
-  color: #f3f4f6;                   /* Light gray/white for menu links */
-}
-
-.mobile-nav a:hover,
-.mobile-nav a:focus {
-  color: #ffffff;
+  margin-top: 16px;
 }
